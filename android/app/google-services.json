@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "249468247552",
+    "project_id": "hobby-connect-b66d3",
+    "storage_bucket": "hobby-connect-b66d3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:249468247552:android:dc3866254bbc25c98c42e5",
+        "android_client_info": {
+          "package_name": "com.example.hobbyconnect"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB0Fj3MhqyknQ_rg3iMKX-eSOcVTFqJ4OY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
