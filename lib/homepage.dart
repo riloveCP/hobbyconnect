@@ -44,49 +44,36 @@ class _HomePageState extends State<HomePage> {
           ),
         ],
       ),
-      body: SingleChildScrollView(
-        child: Stack(
+      body: Stack(
           children: [
-            // Background Image
-            Image.asset(
-              'images/bg.png', // Replace with your image path
-              fit: BoxFit.cover,
-              height: double.infinity,
-              width: double.infinity,
-            ),
-            // Main Content
-            PlaceholderWidget(_currentIndex),
-            // Small Frames
             Positioned(
+              top: 16.0,
               bottom: 16.0,
               left: 16.0,
               right: 16.0,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  SmallFrame(mediaPath: 'images/jigme.jpg', buttonText: 'like'),
-                  SizedBox(height: 16.0),
-                  SmallFrame(mediaPath: 'images/pizza.jpg', buttonText: 'like'),
-                  SizedBox(height: 16.0),
-                ],
-              ),
-            ),
-            Positioned(
-              bottom: 16.0,
-              left: 16.0,
-              right: 16.0,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  SmallFrame(mediaPath: 'images/skateboard.mp4', buttonText: 'like'),
-                  SizedBox(height: 16.0),
-                  // Add more SmallFrame widgets as needed
+              child: CustomScrollView(
+                slivers: [
+                  SliverList(
+                    delegate: SliverChildListDelegate(
+                      [
+                        SmallFrame(mediaPath: 'images/jigme.jpg', buttonText: 'like'),
+                        SizedBox(height: 16.0),
+                        SmallFrame(mediaPath: 'images/pizza.jpg', buttonText: 'like'),
+                        SizedBox(height: 16.0),
+                        SmallFrame(mediaPath: 'images/skateboard.mp4', buttonText: 'like'),
+                        SizedBox(height: 16.0),
+                        SmallFrame(mediaPath: 'images/bholu.mp4', buttonText: 'like'),
+                        SizedBox(height: 16.0),
+                        // Add more SmallFrame widgets as needed
+                      ],
+                    ),
+                  ),
                 ],
               ),
             ),
           ],
         ),
-      ),
+      
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentIndex,
         onTap: (index) {
@@ -237,8 +224,8 @@ class SmallFrame extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 200.0,
-      width: 200.0,
+      height: 400.0,
+      width: 400.0,
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(12.0),
