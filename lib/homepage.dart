@@ -56,14 +56,16 @@ class _HomePageState extends State<HomePage> {
                   SliverList(
                     delegate: SliverChildListDelegate(
                       [
-                        SmallFrame(mediaPath: 'images/jigme.jpg', buttonText: 'like'),
+                        SmallFrame(mediaPath: 'images/jigme.jpg', buttonText: '',caption: 'football is my passion'),
                         SizedBox(height: 16.0),
-                        SmallFrame(mediaPath: 'images/pizza.jpg', buttonText: 'like'),
+                        SmallFrame(mediaPath: 'images/pizza.jpg', buttonText: '', caption: 'eating pizza is best'),
                         SizedBox(height: 16.0),
-                        SmallFrame(mediaPath: 'images/skateboard.mp4', buttonText: 'like'),
+                        SmallFrame(mediaPath: 'images/skateboard.mp4', buttonText: '', caption: 'whenever i am stressed i do skatebaording <3'),
                         SizedBox(height: 16.0),
-                        SmallFrame(mediaPath: 'images/bholu.mp4', buttonText: 'like'),
+                        SmallFrame(mediaPath: 'images/bholu.jpg', buttonText: '', caption: 'i love clicking myself with beautiful sunsets'),
                         SizedBox(height: 16.0),
+                        SmallFrame(mediaPath: 'images/pinkflower.jpg', buttonText: '', caption: 'gardenning is my hobby'),
+                        
                         // Add more SmallFrame widgets as needed
                       ],
                     ),
@@ -212,14 +214,23 @@ class ProfilePage extends StatelessWidget {
   }
 }
 
-class SmallFrame extends StatelessWidget {
+class SmallFrame extends StatefulWidget {
   final String mediaPath;
   final String buttonText;
+  final String caption;
 
   SmallFrame({
     required this.mediaPath,
     required this.buttonText,
+    required this.caption,
   });
+
+  @override
+  _SmallFrameState createState() => _SmallFrameState();
+}
+
+class _SmallFrameState extends State<SmallFrame> {
+  bool isLiked = false;
 
   @override
   Widget build(BuildContext context) {
@@ -243,23 +254,54 @@ class SmallFrame extends StatelessWidget {
           children: [
             // Image or Video
             AspectRatio(
-              aspectRatio: 16 / 9, // Adjust the aspect ratio as needed for videos
-              child: mediaPath.toLowerCase().endsWith('.mp4')
-                  ? VideoPlayerWidget(videoPath: mediaPath)
+              aspectRatio: 16 / 9,
+              child: widget.mediaPath.toLowerCase().endsWith('.mp4')
+                  ? VideoPlayerWidget(videoPath: widget.mediaPath)
                   : Image.asset(
-                      mediaPath,
+                      widget.mediaPath,
                       fit: BoxFit.cover,
-                      height: 120.0, // Set the height of the image
+                      height: 120.0,
                       width: double.infinity,
                     ),
             ),
             SizedBox(height: 8.0),
-            // Button
-            ElevatedButton(
-              onPressed: () {
-                // Add your functionality here when the button is pressed
-              },
-              child: Text(buttonText),
+            // Row to place the button on the right and caption on the left
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                // Caption on the left
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                    child: Text(
+                      widget.caption,
+                      textAlign: TextAlign.right,
+                      style: TextStyle(
+                        fontSize: 16.0,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ),
+                // Like button with heart icon on the right
+                ElevatedButton(
+                  onPressed: () {
+                    // Toggle the liked state
+                    setState(() {
+                      isLiked = !isLiked;
+                    });
+                  },
+                  style: ElevatedButton.styleFrom(
+                    primary: Color.fromARGB(255, 164, 206, 240),
+                    shape: CircleBorder(),
+                    padding: EdgeInsets.all(8.0),
+                  ),
+                  child: Icon(
+                    Icons.favorite,
+                    color: isLiked ? Colors.blue : Colors.white,
+                  ),
+                ),
+              ],
             ),
           ],
         ),
@@ -267,6 +309,8 @@ class SmallFrame extends StatelessWidget {
     );
   }
 }
+
+
 class VideoPlayerWidget extends StatefulWidget {
   final String videoPath;
 
