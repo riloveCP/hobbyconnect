@@ -72,6 +72,13 @@ flutter:
     - images/saloni.jpg
     - images/skateboard.mp4
     - images/pepsi.mp4
+    - images/view.jpeg
+    - images/culturesimmu.jpeg
+    - images/fool.jpeg
+    - images/laalkila.jpeg
+    - images/tajmahal.jpeg
+    - images/simranview.jpeg
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

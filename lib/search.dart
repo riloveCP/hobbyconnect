@@ -20,19 +20,54 @@ class SearchPage extends StatelessWidget {
     // Create a list of SmallFrame objects with different properties
     List<SmallFrame> smallFrames = [
       SmallFrame(
-        mediaPath: 'images/pizza.jpg',
+        mediaPath: 'images/view.jpg',
         buttonText: '',
-        caption: 'Caption 1',
+        caption: 'roaming is my best stuff',
       ),
       SmallFrame(
         mediaPath: 'images/saloni.jpg',
         buttonText: '',
-        caption: 'Caption 2',
+        caption: 'living myself a lil more',
       ),
       SmallFrame(
-        mediaPath: 'images/pinkflower.jpg',
+        mediaPath: 'images/duck.jpeg',
         buttonText: '',
-        caption: 'Caption 3',
+        caption: 'frnds frvr u r my fvrt place',
+      ),
+      SmallFrame(
+        mediaPath: 'images/plane.jpeg',
+        buttonText: '',
+        caption: 'plane hu me',
+      ),
+      SmallFrame(
+        mediaPath: 'images/tajmahal.jpeg',
+        buttonText: '',
+        caption: 'historical places above all',
+      ),
+      SmallFrame(
+        mediaPath: 'images/tajmahal.jpeg',
+        buttonText: '',
+        caption: 'historical places above all',
+      ),
+      SmallFrame(
+        mediaPath: 'images/tajmahal.jpeg',
+        buttonText: '',
+        caption: 'historical places above all',
+      ),
+      SmallFrame(
+        mediaPath: 'images/jigme.jpg',
+        buttonText: '',
+        caption: 'football is everything',
+      ),
+      SmallFrame(
+        mediaPath: 'images/tajmahal.jpeg',
+        buttonText: '',
+        caption: 'historical places above all',
+      ),
+      SmallFrame(
+        mediaPath: 'images/bholu.jpg',
+        buttonText: '',
+        caption: 'life is all about travel with nature',
       ),
       // Add more SmallFrame objects as needed
     ];
@@ -41,17 +76,60 @@ class SearchPage extends StatelessWidget {
       appBar: AppBar(
         title: Text('Search Page'),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Wrap(
-          spacing: 8.0, // Adjust the spacing as needed
-          runSpacing: 8.0, // Adjust the run spacing as needed
-          children: smallFrames,
-        ),
+      body: Stack(
+        children: [
+          // Background Image
+          Positioned.fill(
+            child: Image.asset(
+              'images/bg.png',
+              fit: BoxFit.cover,
+            ),
+          ),
+          Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Container(
+                  height: 40.0,
+                  child: TextField(
+                    textAlign: TextAlign.center,
+                    decoration: InputDecoration(
+                      hintText: 'Type here.......',
+                      hintStyle: TextStyle(color: Colors.blue),
+                      filled: true,
+                      fillColor: Color.fromARGB(255, 164, 206, 240),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10.0),
+                        borderSide: BorderSide.none,
+                      ),
+                    ),
+                    style: TextStyle(color: Colors.blue),
+                  ),
+                ),
+              ),
+              Expanded(
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: ListView.builder(
+                    itemCount: smallFrames.length,
+                    itemBuilder: (BuildContext context, int index) {
+                      return Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: smallFrames[index],
+                      );
+                    },
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ],
       ),
     );
   }
 }
+
+
 
 
 class SmallFrame extends StatefulWidget {
@@ -75,13 +153,13 @@ class _SmallFrameState extends State<SmallFrame> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: MediaQuery.of(context).size.width / 3, // Adjust the width as needed
+      width: MediaQuery.of(context).size.width / 4, // Adjust the width as needed
       child: Wrap(
         children: [
           // Image or Video
           Container(
-            height: 100.0,
-            width: 100.0,
+            height: 150.0,
+            width: 150.0,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(12.0),
               image: DecorationImage(
