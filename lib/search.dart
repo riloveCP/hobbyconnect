@@ -20,54 +20,54 @@ class SearchPage extends StatelessWidget {
     // Create a list of SmallFrame objects with different properties
     List<SmallFrame> smallFrames = [
       SmallFrame(
-        mediaPath: 'images/view.jpg',
+        mediaPath: 'images/view1.png',
         buttonText: '',
-        caption: 'roaming is my best stuff',
+        caption: 'roaming is my best stuff #view',
       ),
       SmallFrame(
         mediaPath: 'images/saloni.jpg',
         buttonText: '',
-        caption: 'living myself a lil more',
+        caption: 'living myself a lil more #people',
       ),
       SmallFrame(
-        mediaPath: 'images/duck.jpeg',
+        mediaPath: 'images/duck.png',
         buttonText: '',
-        caption: 'frnds frvr u r my fvrt place',
+        caption: 'kwak kwak #animals',
       ),
       SmallFrame(
-        mediaPath: 'images/plane.jpeg',
+        mediaPath: 'images/view2.png',
         buttonText: '',
-        caption: 'plane hu me',
+        caption: 'nature heals #view',
       ),
       SmallFrame(
-        mediaPath: 'images/tajmahal.jpeg',
+        mediaPath: 'images/laalkila.png',
         buttonText: '',
-        caption: 'historical places above all',
+        caption: 'historical places above all #building',
       ),
       SmallFrame(
-        mediaPath: 'images/tajmahal.jpeg',
+        mediaPath: 'images/view3.png',
         buttonText: '',
-        caption: 'historical places above all',
+        caption: 'livin in the moment #view',
       ),
       SmallFrame(
-        mediaPath: 'images/tajmahal.jpeg',
+        mediaPath: 'images/animedraw.png',
         buttonText: '',
-        caption: 'historical places above all',
+        caption: 'anime is evrythin',
       ),
       SmallFrame(
         mediaPath: 'images/jigme.jpg',
         buttonText: '',
-        caption: 'football is everything',
+        caption: 'football is everything #football',
       ),
       SmallFrame(
-        mediaPath: 'images/tajmahal.jpeg',
+        mediaPath: 'images/pinkflower.jpg',
         buttonText: '',
-        caption: 'historical places above all',
+        caption: 'gardening #flower',
       ),
       SmallFrame(
         mediaPath: 'images/bholu.jpg',
         buttonText: '',
-        caption: 'life is all about travel with nature',
+        caption: 'life is all about travel with nature #people',
       ),
       // Add more SmallFrame objects as needed
     ];

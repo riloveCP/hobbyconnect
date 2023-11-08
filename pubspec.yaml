@@ -71,13 +71,15 @@ flutter:
     - images/jigme.jpg
     - images/saloni.jpg
     - images/skateboard.mp4
+    - images/view2.png
+    - images/viewwithsimmu.png
+    - images/duck.png
+    - images/fool.png
+    - images/laalkila.png
+    - images/view1.png
+    - images/animedraw.png
     - images/pepsi.mp4
-    - images/view.jpeg
-    - images/culturesimmu.jpeg
-    - images/fool.jpeg
-    - images/laalkila.jpeg
-    - images/tajmahal.jpeg
-    - images/simranview.jpeg
+    - images/view3.png
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
