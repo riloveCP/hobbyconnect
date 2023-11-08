@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 import 'message.dart';
-//import 'search.dart';
+import 'search.dart';
+import 'notification.dart';
+import 'profile.dart';
 
 void main() {
   runApp(
@@ -122,7 +124,7 @@ class _HomePageState extends State<HomePage> {
       case 2:
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => NotificationsPage()),
+          MaterialPageRoute(builder: (context) => NotificationPage()),
         );
         break;
       case 3:
@@ -167,48 +169,6 @@ class PlaceholderWidget extends StatelessWidget {
       child: Text(
         'This is the $pageName',
         style: TextStyle(fontSize: 30),
-      ),
-    );
-  }
-}
-
-class SearchPage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Search Page'),
-      ),
-      body: Center(
-        child: Text('Search Page Content'),
-      ),
-    );
-  }
-}
-
-class NotificationsPage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Notifications Page'),
-      ),
-      body: Center(
-        child: Text('Notifications Page Content'),
-      ),
-    );
-  }
-}
-
-class ProfilePage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Profile Page'),
-      ),
-      body: Center(
-        child: Text('Profile Page Content'),
       ),
     );
   }
